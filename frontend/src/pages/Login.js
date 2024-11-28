@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import logo512 from "../img/logo512.png";
+import logo512 from "../img/sicclogo.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -51,7 +51,7 @@ export default function Login() {
         >
           <img src={logo512} alt="Logo" style={{ width: "30%", height: "100%" }} />
           <Typography component="h1" variant="h6">
-            Login
+            SAMAL ISLAND CITY COLLEGE LMS
           </Typography>
           <Box
             component="form"
