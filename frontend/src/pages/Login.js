@@ -43,13 +43,17 @@ export default function Login() {
         password,
       });
 
-      localStorage.setItem("token", response.data.token);
-
-      console.log("Login successful:", response.data.token);
-
-      navigate("/dashboard");
+      // Check if response and response.data.token exist
+      if (response && response.data && response.data.token) {
+        localStorage.setItem("token", response.data.token);
+        console.log("Login successful:", response.data.token);
+        navigate("/dashboard");
+      } else {
+        console.error("Login failed: Unexpected response format", response);
+        setLoginError(true);
+      }
     } catch (error) {
-      console.error("Login failed:", error.response.data);
+      console.error("Login failed:", error);
       setLoginError(true);
     }
   };
@@ -92,7 +96,7 @@ export default function Login() {
             in={loginError}
             mountOnEnter
             unmountOnExit
-            timeout={300} // Add timeout for smooth transition
+            timeout={300}
           >
             <Alert
               severity="error"
@@ -162,9 +166,8 @@ export default function Login() {
               label="Password"
               type={showPassword ? "text" : "password"}
               id="password"
-              autoComplete="current-password"   
-
-              sx={{ backgroundColor: "white" }} // Corrected line
+              autoComplete="current-password"
+              sx={{ backgroundColor: "white" }}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
@@ -176,8 +179,7 @@ export default function Login() {
                     >
                       {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
-                  </InputAdornment>   
-
+                  </InputAdornment>
                 ),
               }}
             />
