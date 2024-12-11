@@ -26,7 +26,7 @@ class UserDashboardController extends Controller
         }
 
         if ($user->roles->contains('name', 'student')) {
-            return redirect()->route('student.dashboard');
+            return redirect()->route('StudentDashboard');
         }
 
         // Fallback if no role matches

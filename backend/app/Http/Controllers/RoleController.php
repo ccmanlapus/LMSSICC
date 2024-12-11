@@ -25,7 +25,7 @@ class RoleController extends Controller
         // Define views for each role
         $roleViews = [
             'admin' => 'admin.dashboard',
-            'student' => 'student.dashboard',
+            'student' => 'StudentDashboard',
             'instructor' => 'instructor.dashboard',
             'program_head' => 'program_head.dashboard',
         ];
