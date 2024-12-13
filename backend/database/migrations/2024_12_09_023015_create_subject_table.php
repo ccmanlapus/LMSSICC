@@ -17,6 +17,7 @@ class CreateSubjectTable extends Migration
             $table->integer('subID', true);
             $table->string('code', 200)->nullable();
             $table->string('description', 200)->nullable();
+            $table->integer('InstID', true);
         });
     }
 

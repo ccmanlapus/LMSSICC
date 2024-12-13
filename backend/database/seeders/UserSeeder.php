@@ -50,6 +50,7 @@ class UserSeeder extends Seeder
                 'name' => $userData['name'],
                 'email' => $userData['email'],
                 'password' => $userData['password'],
+                'role_id' => $role->id, // Assign role ID directly
             ]);
 
             // Assign role to the user (assuming many-to-many relationship)
