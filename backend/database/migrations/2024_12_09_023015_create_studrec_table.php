@@ -21,7 +21,6 @@ class CreateStudrecTable extends Migration
             $table->string('gender', 100)->nullable();
             $table->string('cnumber', 200)->nullable();
             $table->integer('courseID')->nullable();
-            $table->string('ex', 50)->nullable();
             $table->string('yrStanding', 200)->nullable();
             $table->string('email', 200)->nullable()->default('-');
            
