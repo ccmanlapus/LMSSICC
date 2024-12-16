@@ -18,6 +18,8 @@ class CreateSubjectTable extends Migration
             $table->string('code', 200)->nullable();
             $table->string('description', 200)->nullable();
             $table->integer('InstID', true);
+            $table->foreignId('role_id')->constrained()->onDelete('cascade');
+
         });
     }
 

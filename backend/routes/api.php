@@ -21,6 +21,6 @@ Route::middleware('auth:sanctum')->group(function () {
 
 // Route::get('/dashboard/program-head', [ProgramHeadController::class, 'index'])->name('program-head.dashboard');
 // Route::get('/dashboard/instructor', [InstructorController::class, 'index'])->name('instructor.dashboard');
-// Route::get('/dashboard/student', [StudentController::class, 'index'])->name('student.dashboard');
+// Route::get('/dashboard/student', [StudentController::class, 'index'])->name('StudentDashboard');
 
 Route::get('/dashboard', [RoleController::class, 'index'])->name('dashboard');
