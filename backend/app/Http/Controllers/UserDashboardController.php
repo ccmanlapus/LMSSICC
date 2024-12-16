@@ -18,11 +18,11 @@ class UserDashboardController extends Controller
 
         // Check the user's role and redirect to the corresponding dashboard
         if ($user->roles->contains('name', 'program head')) {
-            return redirect()->route('program-head.dashboard');
+            return redirect()->route('ProgHeadDashboard');
         }
 
         if ($user->roles->contains('name', 'instructor')) {
-            return redirect()->route('instructor.dashboard');
+            return redirect()->route('TeacherDashboard');
         }
 
         if ($user->roles->contains('name', 'student')) {
@@ -32,4 +32,6 @@ class UserDashboardController extends Controller
         // Fallback if no role matches
         return redirect()->route('login')->with('error', 'Role not recognized.');
     }
+
+    
 }
